@@ -1,29 +1,68 @@
-# Detection Lab
 
-## Objective
+# SIEM Deployment and Log Analysis
 
+## Overview
+This project focuses on **deploying a Security Information and Event Management (SIEM) system** using **Detection Lab** to analyze security logs, detect threats, and enhance incident response. It simulates a **real-world enterprise environment** with **Windows, Linux, and network infrastructure**, allowing hands-on experience with **log ingestion, correlation, and alerting**.
 
-The Detection Lab project aimed to establish a controlled environment for simulating and detecting cyber attacks. The primary focus was to ingest and analyze logs within a Security Information and Event Management (SIEM) system, generating test telemetry to mimic real-world attack scenarios. This hands-on experience was designed to deepen understanding of network security, attack patterns, and defensive strategies.
+## Objectives
+- Deploy and configure a **SIEM platform** (e.g., Splunk, ELK, or Graylog) in a virtualized lab.
+- Collect and analyze logs from **Windows, Linux, and network devices**.
+- Implement **log parsing, correlation rules, and dashboards** for security monitoring.
+- Detect security incidents such as **brute force attacks, malware execution, and privilege escalation**.
+- Develop **queries and alerts** for automated threat detection.
+- Generate **reports for security operations** and compliance auditing.
 
-### Skills Learned
+## Lab Components
+- **SIEM Platform**: Splunk, or ELK Stack.
+- **Windows Infrastructure**: Windows Server, Windows 10 Workstation with Sysmon.
+- **Linux Infrastructure**: Ubuntu/Debian-based system with auditd logging.
+- **Network Security Tools**: Suricata IDS for network traffic analysis.
+- **Log Sources**:
+  - Windows Event Logs (Security, Application, System)
+  - Sysmon logs (detailed process creation, network connections)
+  - Linux audit logs
+  - Firewall and IDS logs
+  - Authentication logs (Active Directory, SSH, VPN)
 
+## Deployment Steps
+1. **Setup Detection Lab**  
+   - Clone the Detection Lab repository  
+   - Deploy using Vagrant & VirtualBox/VMware  
+   - Configure network settings and logging agents  
 
-- Advanced understanding of SIEM concepts and practical application.
-- Proficiency in analyzing and interpreting network logs.
-- Ability to generate and recognize attack signatures and patterns.
-- Enhanced knowledge of network protocols and security vulnerabilities.
-- Development of critical thinking and problem-solving skills in cybersecurity.
+2. **Install & Configure SIEM**
+   - Deploy Splunk or ELK and configure indexers  
+   - Install Universal Forwarders & Beats agents for log shipping  
+   - Set up **log parsing and normalization** (e.g., regex, Grok patterns)  
 
-### Tools Used
+3. **Log Collection & Forwarding**
+   - Configure Windows Event Forwarding (WEF)  
+   - Enable Sysmon and audit logging on Windows  
+   - Configure Linux auditd and rsyslog forwarding  
+   - Integrate network logs from Suricata or firewalls  
 
+4. **Log Analysis & Threat Detection**
+   - Create **SIEM correlation rules** for:
+     - Failed authentication attempts (brute-force detection)  
+     - Suspicious PowerShell execution  
+     - Privilege escalation and lateral movement  
+     - Unusual network connections  
+   - Set up **SIEM dashboards** for monitoring security metrics  
 
-- Security Information and Event Management (SIEM) system for log ingestion and analysis.
-- Network analysis tools (such as Wireshark) for capturing and examining network traffic.
-- Telemetry generation tools to create realistic network traffic and attack scenarios.
+5. **Incident Investigation & Response**
+   - Simulate **attack scenarios** (e.g., MITRE ATT&CK techniques)  
+   - Investigate alerts using **SIEM query languages** (Splunk SPL, Kibana KQL)  
+   - Generate security reports and response playbooks  
 
+## Expected Outcomes
+- **Operational SIEM** with real-time log ingestion and alerting.  
+- **Detection and correlation rules** to identify security threats.  
+- **Comprehensive dashboards** for security event visualization.  
+- **Hands-on experience** with security log analysis and investigation.  
 
-<img width="1274" alt="Screenshot 2025-01-26 at 3 36 30 PM" src="https://github.com/user-attachments/assets/cec7af29-ff1b-4a9e-bfb6-c849f8523f06" />
-
-
+## References
+- [Detection Lab GitHub Repo](https://github.com/clong/DetectionLab)  
+- [Splunk Security Essentials](https://splunkbase.splunk.com/app/3435/)  
+- [Elastic Security Guide](https://www.elastic.co/guide/en/security/current/index.html)  
 
 
